@@ -25,12 +25,12 @@ class Excange(QtWidgets.QMainWindow):
         except:
             error = QMessageBox()
             error.setWindowTitle('Ошибка ввода')
-            error.setText('Ввод валюты в заглавных бувах: (USD, EUR)')
+            error.setText('Ввод валюты в заглавных английских буквах: (USD, EUR)')
             error.setIcon(QMessageBox.Warning)
             # error.setStandardButtons(QMessageBox.Cancel|QMessageBox.OK)
             # error.setDefaultButton(QMessageBox.OK)
             error.setInformativeText('В поле ввода суммы, необходимо ввести цифры: (10.50)')
-            error.setDetailedText('Проверте корректность ввода данных')
+            error.setDetailedText('Проверте корректность ввода всех данных')
             error.exec_()
         
         
