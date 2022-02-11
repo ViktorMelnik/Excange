@@ -10,9 +10,6 @@ class Excange(QtWidgets.QMainWindow):
         super(Excange, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.connect()
-                
-    def connect(self):
         self.ui.pushButton.clicked.connect(self.converter)
     
     def converter(self):
