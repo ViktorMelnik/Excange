@@ -1,25 +1,25 @@
-from distutils.log import error
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from currency_converter import CurrencyConverter
 from exchange_design import Ui_MainWindow
+from distutils.log import error
 import sys
 
 class Excange(QtWidgets.QMainWindow):
     def __init__(self):
         super(Excange, self).__init__()
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
-        self.ui.pushButton.clicked.connect(self.converter)
+        self.money = Ui_MainWindow()
+        self.money.setupUi(self)
+        self.money.pushButton.clicked.connect(self.converter)
     
     def converter(self):
         try:
             exchange = CurrencyConverter()
-            my_currency = self.ui.enter_currency.text()
-            get_currency = self.ui.get_currency.text()
-            enter_amount = float(self.ui.enter_amount.text())
+            my_currency = self.money.enter_currency.text()
+            get_currency = self.money.get_currency.text()
+            enter_amount = float(self.money.enter_amount.text())
             get_amount = round(exchange.convert(enter_amount, '%s' % (my_currency), '%s' % (get_currency)), 2)
-            self.ui.get_amount.setText(str(get_amount))
+            self.money.get_amount.setText(str(get_amount))
         except:
             error = QMessageBox()
             error.setWindowTitle('Ошибка ввода')
