@@ -16,9 +16,11 @@ class Excange(QtWidgets.QMainWindow):
         try:
             exchange = CurrencyConverter()
             my_currency = self.money.enter_currency.text()
+            my_upper = my_currency.upper()
             get_currency = self.money.get_currency.text()
+            get_upper = get_currency.upper()
             enter_amount = float(self.money.enter_amount.text())
-            get_amount = round(exchange.convert(enter_amount, '%s' % (my_currency), '%s' % (get_currency)), 2)
+            get_amount = round(exchange.convert(enter_amount, '%s' % (my_upper), '%s' % (get_upper)), 2)
             self.money.get_amount.setText(str(get_amount))
         except:
             error = QMessageBox()
